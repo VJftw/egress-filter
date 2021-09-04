@@ -7,6 +7,6 @@ docker_image(
         "//cmd/squid-configurer",
     ],
     dockerfile = "Dockerfile",
-    image = "vjftw/squid",
+    image = "egress-proxy",
     run_args = "--env DOMAIN_WHITELIST=.google.com,bbc.com --publish 3128:3128",
 )

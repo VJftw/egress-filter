@@ -9,7 +9,9 @@
 version = 16.6.1
 
 [buildconfig]
-default-docker-repo = index.docker.io/vjftw/squid
+default-docker-repo = ghcr.io/vjftw
+terraform-default-toolchain=//third_party/terraform:1
+terraform-plz-tool = //third_party/defs:plz_tool
 
 [go]
 importpath = github.com/vjftw/egress-proxy

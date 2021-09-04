@@ -3,8 +3,14 @@
 set -e;
 set -x;
 
-# Add domain whitelisting from environment variables.
-# read space separated list of dstdomains from DOMAIN_WHITELIST
+# configure SSL
+cd /etc/squid/ssl
+openssl genrsa -out squid.key 4096
+openssl req -new -key squid.key -out squid.csr -subj "/C=XX/ST=XX/L=squid/O=squid/CN=squid"
+openssl x509 -req -days 3650 -in squid.csr -signkey squid.key -out squid.crt
+cat squid.key squid.crt >> squid.pem
+
+/usr/lib/squid/security_file_certgen -c -s /var/cache/squid/ssl_db -M 4MB
 
 /squid-configurer
 
