@@ -5,10 +5,9 @@ terraform_root(
     srcs = [
         "main.tf",
         "vpc.tf",
-        "public-subnets.tf",
-        # "private-subnets.tf",
+        "subnets.tf",
     ],
     modules = [
-        # "//deploy/module/gcp",
+        "//deploy/module/gcp:gcp",
     ]
 )

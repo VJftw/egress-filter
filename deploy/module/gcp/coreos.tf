@@ -1,10 +1,10 @@
 data "google_compute_image" "coreos" {
-  family  = "fedora-coreos-stable"
-  project = "fedora-coreos-cloud"
+  family  = var.image_family
+  project = var.image_project
 }
 
 data "ignition_systemd_unit" "squid" {
-  name = "squid.service"
+  name    = "squid.service"
   enabled = true
   content = <<EOS
 [Unit]
@@ -32,7 +32,7 @@ EOS
 }
 
 data "ignition_user" "core" {
-  name = "core"
+  name                = "core"
   ssh_authorized_keys = var.core_authorized_keys
 }
 

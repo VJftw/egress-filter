@@ -1,8 +1,10 @@
 resource "google_compute_instance" "squid" {
-  project       = local.project
+  project = var.project
 
-  name         = "Squid"
+  name         = "squid"
   machine_type = "e2-medium"
+  zone = "europe-west1-b"
+  can_ip_forward = true
 
   boot_disk {
     initialize_params {
@@ -10,15 +12,10 @@ resource "google_compute_instance" "squid" {
     }
   }
 
-  // Local SSD disk
-  scratch_disk {
-    interface = "SCSI"
-  }
-
   network_interface {
-    network = google_compute_network.main.id
-    subnetwork = google_compute_subnetwork.public.id
-
+    network = var.network_id
+    subnetwork = var.public_subnetwork_id
+    # network    = google_compute_network.main.id
     access_config {
       // Ephemeral public IP
     }
