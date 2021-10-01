@@ -30,8 +30,6 @@ resource "google_compute_instance" "test" {
   machine_type = "g1-small"
   zone         = "europe-west1-b"
 
-  tags = ["internet-egress"]
-
   boot_disk {
     initialize_params {
       image = "debian-cloud/debian-10"

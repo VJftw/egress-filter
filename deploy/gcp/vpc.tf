@@ -15,8 +15,7 @@ resource "google_compute_firewall" "iap_ssh" {
     ports    = ["22"]
   }
 
-  source_ranges = ["35.235.240.0/20", "0.0.0.0/0"]
-
+  source_ranges = ["35.235.240.0/20"]
 }
 
 resource "google_compute_router" "router" {

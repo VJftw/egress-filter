@@ -9,5 +9,6 @@ terraform_root(
     ],
     modules = [
         "//deploy/module/gcp:gcp",
-    ]
+    ],
+    visibility = ["//test/..."],
 )

@@ -42,10 +42,3 @@ variable "core_authorized_keys" {
 
   default = []
 }
-
-variable "include_tags" {
-  type = list(string)
-  description = "The tags to apply this route to."
-
-  default = ["internet-egress"]
-}

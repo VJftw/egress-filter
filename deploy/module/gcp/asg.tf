@@ -6,6 +6,8 @@ resource "google_compute_instance" "squid" {
   zone = "europe-west1-b"
   can_ip_forward = true
 
+  tags = ["squid"]
+
   boot_disk {
     initialize_params {
       image = data.google_compute_image.coreos.id
