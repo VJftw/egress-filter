@@ -21,6 +21,9 @@ module "egress_proxy" {
   
   domain_whitelist = [
     ".github.com",
+    ".cloud.google.com",
+    ".debian.org",
+    "1.1.1.1",
   ]
 }
 

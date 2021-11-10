@@ -1,19 +1,19 @@
-FROM alpine:3.14
+FROM envoyproxy/envoy:v1.20.0
 
-RUN apk add --update --no-cache \
-    squid \
-    openssl
+# RUN apk add --update --no-cache \
+#     squid \
+#     openssl
 
-ADD root /
+# ADD root /
 
-RUN chmod +x /docker-entrypoint.sh && \
-    mkdir -p /run/squid /etc/squid/ssl \
-    && chown -R squid:squid /run/squid /etc/squid \
-    && chown squid:squid /etc/squid/squid.conf \
-    && echo 'pid_filename /var/run/squid/squid.pid' >> /etc/squid/squid.conf
+# RUN chmod +x /docker-entrypoint.sh && \
+#     mkdir -p /run/squid /etc/squid/ssl \
+#     && chown -R squid:squid /run/squid /etc/squid \
+#     && chown squid:squid /etc/squid/squid.conf \
+#     && echo 'pid_filename /var/run/squid/squid.pid' >> /etc/squid/squid.conf
 
-USER squid
+# USER squid
 
-COPY squid-configurer /squid-configurer
+# COPY squid-configurer /squid-configurer
 
-ENTRYPOINT [ "/docker-entrypoint.sh" ]
+# ENTRYPOINT [ "/docker-entrypoint.sh" ]

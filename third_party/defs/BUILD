@@ -6,19 +6,25 @@ remote_file(
     url = "https://raw.githubusercontent.com/thought-machine/pleasings/7fa34bc749ff31008680f5d113ad958a73d84e07/docker/docker.build_defs",
 )
 
-TERRAFORM_DEF_VERSION = "97b76773815d36aa1571408aa482767574c5e2a7"
+TERRAFORM_DEF_VERSION = "0385c38ae86becc619e8fcb98644ee98e403f63f"
 
 remote_file(
     name = "terraform",
-    url = f"https://raw.githubusercontent.com/VJftw/pleasings/{TERRAFORM_DEF_VERSION}/terraform/terraform.build_defs",
-    hashes = ["86cd7bc96df478bbae96f9de5709cdc6caf8f9d3d474f03b9927c3fc0d065e83"],
+    url = f"https://raw.githubusercontent.com/thought-machine/pleasings/{TERRAFORM_DEF_VERSION}/terraform/terraform.build_defs",
+    hashes = ["8a4477f00d81f0670bfae8ce21fe1976a39d164c074ce2c32c1b57f0e9069230"],
     visibility = ["PUBLIC"],
 )
 
-remote_file(
+# remote_file(
+#     name = "plz_tool",
+#     url = f"https://raw.githubusercontent.com/thought-machine/pleasings/{TERRAFORM_DEF_VERSION}/terraform/scripts/terraform.sh",
+#     hashes = ["56c1aad366aa3374a9d3e09c3f388d913498cddf5a9f7c0c39ee69d9329d8641"],
+#     visibility = ["PUBLIC"],
+#     binary = True,
+# )
+
+sh_binary(
     name = "plz_tool",
-    url = f"https://raw.githubusercontent.com/VJftw/pleasings/{TERRAFORM_DEF_VERSION}/terraform/scripts/terraform.sh",
-    hashes = ["4fd4e78b33205a6ccc8b902709e919f5e4be42f9f2ecca9a53757949efc14055"],
+    main = "terraform.sh",
     visibility = ["PUBLIC"],
-    binary = True,
 )

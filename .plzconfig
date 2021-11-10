@@ -14,5 +14,5 @@ terraform-default-toolchain=//third_party/terraform:1
 terraform-plz-tool = //third_party/defs:plz_tool
 
 [go]
-importpath = github.com/vjftw/egress-proxy
+importpath = github.com/VJftw/egress-filter
 gotool = //third_party/go:tool|go

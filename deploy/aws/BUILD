@@ -9,6 +9,6 @@ terraform_root(
         "private-subnets.tf",
     ],
     modules = [
-        "//deploy/module/aws",
+        "//deploy/module/aws:aws",
     ]
 )

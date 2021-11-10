@@ -4,7 +4,7 @@ subinclude(
 
 terraform_toolchain(
     name = "1",
-    version = "1.0.6",
-    hashes = ["6a454323d252d34e928785a3b7c52bfaff1192f82685dfee4da1279bb700b733"],
+    version = "1.0.10",
+    hashes = ["a221682fcc9cbd7fde22f305ead99b3ad49d8303f152e118edda086a2807716d"],
     visibility = ["PUBLIC"],
 )

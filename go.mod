@@ -1,4 +1,4 @@
-module github.com/VJftw/egress-proxy
+module github.com/VJftw/egress-filter
 
 go 1.17
 
@@ -23,4 +23,5 @@ require (
 	golang.org/x/sys v0.0.0-20200930185726-fdedc70b468f // indirect
 	golang.org/x/text v0.3.3 // indirect
 	gopkg.in/yaml.v2 v2.2.8 // indirect
+	inet.af/tcpproxy v0.0.0-20210824174053-2e577fef49e2
 )

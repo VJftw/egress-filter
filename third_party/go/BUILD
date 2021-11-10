@@ -209,3 +209,10 @@ go_module(
     version = "v13.0.0",
     licences = ["Apache-2.0", "MIT", "Unicode-DFS-2016"],
 )
+
+go_module(
+    name = "inet_tcpproxy",
+    module = "inet.af/tcpproxy",
+    version = "v0.0.0-20210824174053-2e577fef49e2",
+    licences = ["Apache-2.0"],
+)
